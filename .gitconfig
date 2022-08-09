@@ -1,34 +1,47 @@
 [user]
-  name = Jeff Geerling
-  email = geerlingguy@mac.com
+	name = Rene Gebauer
+	email = rene.gebauer@googlemail.com
 [core]
-  editor = vi
-  excludesfile = ~/.gitignore
-  autocrlf = input
+	excludesfile = ~/.gitignore
+	precomposeunicode = true
+	editor = vi
+	autocrlf = input
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+  	branch = auto
+  	diff = auto
+  	interactive = auto
+  	status = auto
 [init]
-  defaultBranch = master
+  	defaultBranch = master
 [web]
-  browser = google-chrome
+  	browser = google-chrome
 [credential]
-  helper = osxkeychain
+  	helper = osxkeychain
 [push]
-  default = simple
+  	default = simple
 [merge]
-  tool = kdiff3
+  	tool = kdiff3
 [difftool]
-  prompt = false
+  	prompt = false
 [alias]
-  c = commit
-  ca = commit -a
-  cm = commit -m
-  cam = commit -am
-  d = diff
-  dc = diff --cached
-  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	d = diff
+	dc = diff --cached
+	l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
 [pull]
 	rebase = true
+[submodule]
+	recurse = true
+[filter "vault"]
+  smudge = contrib/vault/smudge.sh
+  clean  = contrib/vault/clean.sh
+[diff "vault"]
+  textconv = contrib/vault/diff.sh
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
