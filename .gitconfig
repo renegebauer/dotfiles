@@ -12,7 +12,7 @@
   	interactive = auto
   	status = auto
 [init]
-  	defaultBranch = master
+  	defaultBranch = main
 [web]
   	browser = google-chrome
 [credential]
